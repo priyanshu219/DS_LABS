@@ -4,26 +4,28 @@ using namespace std;
 enum COLOR {red, black};
 
 typedef struct node{
-    int data, height, color;
+    int data, height, color, level;
     struct node *left, *right, *parent;
-}node;
+}nod;
 
 node *root_bst = NULL, *root_rbt = NULL, *root_avl = NULL;
 int path_arr[1000];
 
-void insert_bst(node *&root, int data){
+node* insert_bst(node *root, int data){
     if(!root){
         root = new node();
         root ->data = data;
         root -> left = root ->right = NULL;
-        return;
+        root -> height = 0;
     }
     else{
         if(root->data > data)
-            insert_bst(root->left, data);
+            root->left = insert_bst(root->left, data);
         else if(root -> data < data)
-            insert_bst(root->right, data);
+            root -> right = insert_bst(root->right, data);
     }
+    root -> height = max(root->left->height, root -> right->height)+1;
+    return root;
 }
 
 node* rotate_right_single(node *root);
@@ -109,7 +111,7 @@ void fixrbt(node *&root, node *&node){
 
 node* insert_rbt(node* root, int data){
     struct node *node = new struct node();
-    node -> color = red; node -> parent = node -> left = node -> right = 0; node -> data = data;
+    node -> color = red; node -> parent = node -> left = node -> right = 0; node -> data = data; node->height = 0;
     if(!root)
         return node;
     if(node -> data < root -> data){
@@ -121,6 +123,7 @@ node* insert_rbt(node* root, int data){
         root -> right-> parent = root;
     }
     fixrbt(root, node);
+    node->height = max(node->left->height, node->right->height)+1;
     return root;
 }
 
@@ -137,11 +140,73 @@ void transverse_node(node *root, int flag){
     transverse_node(root->right, flag);   
 }
 
-void print_path(){
-
+void print_path(node* root, node* leaf){
+    cout<<root->data;
+    struct node* temp = root;
+    while(root != leaf){
+        if(root -> data > leaf -> data){
+            root = root -> left;
+            cout<<"->"<<root->data;
+        }
+        else if(root -> data < leaf -> data){
+            root = root->right;
+            cout<<"->"<<root-> data;
+        }
+    }
+    cout<<"\n";
+    root = temp;
+    if(root -> data > leaf -> data){
+        root = root -> left;
+        print_path(root, leaf);
+    }
+    else if(root -> data < leaf -> data){
+        root = root -> right;
+        print_path(root, leaf);
+    }
 }
 
-void store_paths(){}
+void find_leaf(node *root, int flag){
+    if(!(root -> left) && !(root->right))
+        if(flag == 1)
+            print_path(root_bst, root);
+        else if(flag == 2)
+            print_path(root_avl, root);
+        else if(flag == 3)
+            print_path(root_rbt, root);
+    if(root -> left)
+        find_leaf(root->left, flag);
+    else if(root -> right)
+        find_leaf(root -> right, flag);
+}
+
+void find_level(node* node_parent, node *node){
+    if(node == root_bst || node == root_avl || node == root_rbt)
+        node->level = 0;
+    else
+        node -> level = node_parent->level +1;
+    if(node->left)
+        find_level(node, node->left);
+    if(node->right)
+        find_level(node, node->right);
+}
+
+void print_bst_avl(node *root, int flag){
+        cout<<string(4 * root->level,' ');
+        if(flag == 1)
+            cout<<root->data<<"["<<root -> height<<"]"<<"\n";
+        if(flag == 2)
+            cout<<root->data<<"["<<(root->left->height - root->right->height)<<"]\n";
+        if(flag == 3)
+            cout<<root->data<<"["<<root->height<<"]"<<"["<<root-> color<<"]\n";
+        if(root -> left)
+            print_bst_avl(root -> left, flag);
+        else if(!root->left && root->right)
+            cout<<"\n";
+        else if(root -> right)
+            print_bst_avl(root -> right, flag);
+        else if((root->left)&&!(root->right))
+            cout<<"\n";
+}
 
 int main(){
     int n, i, flag, x, opt;
@@ -175,7 +240,17 @@ int main(){
         transverse_node(root_bst, 3);
     }
     else if(opt == 4){
-        print_path(root_bst);
+        find_leaf(root_bst, 1);
+        find_leaf(root_avl, 2);
+        find_leaf(root_rbt, 3);
+    }
+    else if(opt == 5){
+        find_level(root_bst, NULL);
+        find_level(root_avl, NULL);
+        find_level(root_rbt, NULL);
+        print_bst_avl(root_bst, 1);
+        print_bst_avl(root_avl, 2);
+        print_bst_avl(root_rbt, 3);
     }
 }
 
