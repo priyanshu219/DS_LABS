@@ -6,7 +6,7 @@ enum COLOR {red, black};
 typedef struct node{
     int data, height, color, level;
     struct node *left, *right, *parent;
-}nod;
+}node;
 
 node *root_bst = NULL, *root_rbt = NULL, *root_avl = NULL;
 int path_arr[1000];
