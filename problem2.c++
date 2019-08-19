@@ -47,14 +47,14 @@ int main(){
             if(dp[i][j] == 0)
                 for(k = i+1; k <= j; k++)
                     cout<<"("<<i<<","<<k<<","<<j<<")\n";
-    cout<<"\nFrom Linked List\n";
+    cout<<"\nFrom Linked List:\n";
     cnt = 0;
     head = root;
     current = root;
     for(i = 1; i <= n; i++){
         current = head;
-        node *node = new struct node();
         for(j = i; j <= n; j++){
+            node *node = new struct node();
             if(i == j)
                 node->data = a[i];
             else
@@ -69,6 +69,7 @@ int main(){
         }
         head = head -> bottom;
     }
+    cout<<cnt<<"\n";
     head = root;
     while(head){
         current = head -> right;
