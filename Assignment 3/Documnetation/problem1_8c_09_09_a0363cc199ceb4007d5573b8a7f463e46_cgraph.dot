@@ -1,0 +1,17 @@
+digraph "insert_rbt"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node39 [label="insert_rbt",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node39 -> Node40 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node40 [label="insert_rbt_bst",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$problem1_8c_09_09.html#a9091675b4cb1dd81662cc596209b6967",tooltip="To insert node in Binary search tree of rbt before fixing it. "];
+  Node40 -> Node41 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node41 [label="height",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$problem1_8c_09_09.html#ae4a66d8b0c2b0d626aea45977e358c83",tooltip="To find the height of a node. "];
+  Node39 -> Node42 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node42 [label="fixrbt",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$problem1_8c_09_09.html#af4fc9659bda02ecdccba8ecb55a3e971",tooltip="To fix the BST of RBT according to the rules. "];
+  Node42 -> Node43 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node43 [label="rotate_left",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$problem1_8c_09_09.html#a1579ad62b8407bdd8785ba8fe0124d8c",tooltip="To rotate the nodes about the given node in anti-clockwise. "];
+  Node42 -> Node44 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node44 [label="rotate_right",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$problem1_8c_09_09.html#a51571a655c2981337fb8acf35cc36f2f",tooltip="To rotate the nodes about the given node in clockwise. "];
+}

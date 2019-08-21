@@ -1,0 +1,14 @@
+digraph "rotate_right_double"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node105 [label="rotate_right_double",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node105 -> Node106 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node106 [label="rotate_left_single",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$problem1_8c_09_09.html#a37b3816a6b816dc2dfde0edf3b41d984",tooltip="Rotate the nodes left one time about the root node. "];
+  Node106 -> Node107 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node107 [label="height",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$problem1_8c_09_09.html#ae4a66d8b0c2b0d626aea45977e358c83",tooltip="To find the height of a node. "];
+  Node105 -> Node108 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node108 [label="rotate_right_single",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$problem1_8c_09_09.html#ab8bf4dda48c1a0d702827a11502581d9",tooltip="Rotate the nodes right one time about the root node. "];
+  Node108 -> Node107 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}
