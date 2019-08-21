@@ -1,0 +1,27 @@
+digraph "insert_avl"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node7 [label="insert_avl",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node7 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="height",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$problem1_8c_09_09.html#ae4a66d8b0c2b0d626aea45977e358c83",tooltip="To find the height of a node. "];
+  Node7 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="rotate_right_single",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$problem__1_8c_09_09.html#a686d12dd19143698c899bc9e31427b4f"];
+  Node9 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 -> Node10 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="rotate_right_double",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$problem__1_8c_09_09.html#a17f64addc7222c3b1200dbb25c670dfa"];
+  Node10 -> Node11 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="rotate_left_single",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$problem__1_8c_09_09.html#a8c8369713ed6b665b506e088a915fe9e"];
+  Node11 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 -> Node11 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 -> Node12 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="rotate_left_double",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$problem__1_8c_09_09.html#a9becc3ba304b23eefffbcd86b26c23be"];
+  Node12 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 -> Node11 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 -> Node13 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 [label="rotate_left",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$problem__1_8c_09_09.html#a1579ad62b8407bdd8785ba8fe0124d8c"];
+  Node7 -> Node14 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node14 [label="rotate_right",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$problem__1_8c_09_09.html#a51571a655c2981337fb8acf35cc36f2f"];
+}

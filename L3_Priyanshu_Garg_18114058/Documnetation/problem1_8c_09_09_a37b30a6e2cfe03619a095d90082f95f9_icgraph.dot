@@ -1,0 +1,11 @@
+digraph "print_path"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node76 [label="print_path",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node76 -> Node77 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node77 [label="find_leaf",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$problem1_8c_09_09.html#aedf3f8f3f1f864692c9568ef16373254",tooltip="To find the leaf node and when founded call print_path. "];
+  Node77 -> Node78 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node78 [label="main",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$problem1_8c_09_09.html#ae66f6b31b5ad750f1fe042a706a4e3d4",tooltip="To take input and print menu to do task and call menu again and again. "];
+}
