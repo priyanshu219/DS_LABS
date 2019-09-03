@@ -16,7 +16,7 @@ public:
 	void insert(string, string);
 	bool search(string, string&);
 	void takeinput();
-	void print_meaning(string);
+	void print_meaning(string)
 };
 
 void trienode::insert(string key, string meaning){
